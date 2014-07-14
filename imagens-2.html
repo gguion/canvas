@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <canvas id="meu_canvas" width="100" height="84"></canvas>
+        <script>
+            var canvas              = document.getElementById('meu_canvas');
+            var context             = canvas.getContext('2d');
+            
+            var imagem              = new Image();
+            imagem.src              = 'images/explosao.gif';
+            imagem.onload           = function() {
+                context.drawImage(imagem, 80, 0, 80, 64, 20, 20, 80, 64);
+            }
+        </script>
+    </body>
+</html>

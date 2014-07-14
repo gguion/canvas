@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <canvas id="meu_canvas" width="700" height="800"></canvas>
+        <script>
+            var canvas              = document.getElementById('meu_canvas');
+            var context             = canvas.getContext('2d');
+            
+            var x                   = 20;
+            var y                   = 20;
+            
+            var anterior            = new Date().getTime();
+            
+            requestAnimationFrame(mexerBola);
+            
+            function mexerBola() {
+                var agora           = new Date().getTime();
+                var decorrido       = anterior - agora;
+                var imagem          = new Image();
+                imagem.src          = 'images/disco_voador.gif';
+                imagem.onload       = function() {
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    context.drawImage(imagem, x, y, 64, 32);
+                }
+
+                var velocidade          = 50;
+                y -= velocidade*decorrido/1000;
+                
+                anterior = agora;
+                requestAnimationFrame(mexerBola);
+            }
+            
+        </script>
+    </body>
+</html>
