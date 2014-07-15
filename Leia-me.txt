@@ -1,1 +1,2 @@
 Legal a animação... é html5?
+Sim html5 (canvas) e Javascript, comprei um livro e estou estudando!
